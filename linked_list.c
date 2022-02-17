@@ -20,7 +20,7 @@ void push_end(Item *head, char *item) {
     while (current->next != NULL) {
         current = current->next;
     }
-    current->next = malloc(sizeof(Item));
+    current->next = (Item *)malloc(sizeof(Item));
     current->next->item = item;
     current->next->next = NULL;
 }
