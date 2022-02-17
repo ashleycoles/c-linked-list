@@ -47,7 +47,6 @@ char* remove_last(Item *head) {
     while (current->next->next != NULL) {
         current = current->next;
     }
-     printf("%s\n", current->item);
 
     return_value = current->next->item;
     free(current->next);
@@ -107,7 +106,7 @@ int main(void) {
     head->next->next = NULL;
     push_end(head, "Wish You Were Here - Pink Floyd");
     push_end(head, "Welcome Home - Metallica");
-
+    remove_last(head);
 
     print_linked_list(head);
 }
