@@ -91,6 +91,15 @@ char* remove_by_value(Item ** head, char *item) {
     return "";
 }
 
+int count(Item *head) {
+    int count = 0;
+    Item *current = head;
+    while (current) {
+        count++;
+        current = current->next;
+    }
+    return count;
+}
 
 int main(void) {
     Item *head = NULL;
@@ -106,7 +115,9 @@ int main(void) {
     head->next->next = NULL;
     push_end(head, "Wish You Were Here - Pink Floyd");
     push_end(head, "Welcome Home - Metallica");
-    remove_last(head);
+    // remove_last(head);
+
+    printf("%i", count(head));
 
     print_linked_list(head);
 }
