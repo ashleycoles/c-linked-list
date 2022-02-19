@@ -101,6 +101,16 @@ int count(Item *head) {
     return count;
 }
 
+void free_list(Item *head) {
+    Item *tmp;
+
+    while (head != NULL) {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+}
+
 int main(void) {
     Item *head = NULL;
     head = malloc(sizeof(Item));
@@ -120,4 +130,5 @@ int main(void) {
     printf("%i", count(head));
 
     print_linked_list(head);
+    free_list(head);
 }
